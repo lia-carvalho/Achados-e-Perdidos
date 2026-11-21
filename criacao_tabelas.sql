@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS achados_perdidos;
 CREATE DATABASE achados_perdidos;
 USE achados_perdidos;
 
@@ -48,7 +49,7 @@ CREATE TABLE Objeto(
     categoria VARCHAR(50) NOT NULL,
     foto VARCHAR(250),
     estatus ENUM('Perdido', 'Encontrado', 'Devolvido') NOT NULL,
-    data_registro TIMESTAMP,
+    data_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     id_local INT,
     id_pessoa INT,
     FOREIGN KEY (id_local) REFERENCES Local(id_local),
@@ -57,7 +58,7 @@ CREATE TABLE Objeto(
 
 CREATE TABLE Devolucao(
 	id_devolucao INT AUTO_INCREMENT PRIMARY KEY,
-    data_devolucao TIMESTAMP,
+    data_devolucao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     codigo_objeto INT,
     id_pessoa INT,
     id_funcionario VARCHAR(20),
@@ -65,4 +66,6 @@ CREATE TABLE Devolucao(
     FOREIGN KEY (id_pessoa) REFERENCES Pessoa(id_pessoa),
     FOREIGN KEY (id_funcionario) REFERENCES Funcionario(id_funcionario)
 );
+
+
 
