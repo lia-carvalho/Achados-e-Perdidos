@@ -1,8 +1,8 @@
 USE achados_perdidos;
 -- Campus 
-INSERT INTO Campus(endereco) VALUES
-('Rua Gomes Carneiro, 1 - Campus Anglo'),
-('Rua Almirante Barroso, 1202 - Campus I');
+INSERT INTO Campus(nome,endereco) VALUES
+( 'Campus Anglo', 'Rua Gomes Carneiro, 1'),
+( 'Campus I','Rua Almirante Barroso, 1202');
 
 -- Pessoas 
 INSERT INTO Pessoa(nome,email,telefone,cpf) VALUES
@@ -26,7 +26,7 @@ INSERT INTO Professor(id_pessoa, siape) VALUES
 (6, 'SIAPE12345');
 
 INSERT INTO Local (tipo_local, andar, predio,numero_sala, codigo_campus) VALUES
-('Lab 3', 3, 'Bloco A', 336,1),
+('Lab 3', 3, 'Bloco A', '336',1),
 ('Sala de Aula', 4, 'Bloco A', '437',1),
 ('Banheiro Feminino', 1, 'Bloco principal', NULL, 2),
 ('Estacionamento', NULL, NULL, NULL, 1);

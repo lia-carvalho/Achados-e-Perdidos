@@ -4,6 +4,7 @@ USE achados_perdidos;
 
 CREATE TABLE Campus(
 	codigo_campus INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(50) NOT NULL,
     endereco VARCHAR(200)
 );
 
